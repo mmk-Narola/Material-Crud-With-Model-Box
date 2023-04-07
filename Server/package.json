@@ -1,0 +1,12 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --host 192.168.100.84 employes.json -p 3004"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

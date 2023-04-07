@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>{{ formTitle }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="employeData" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Code</mat-label>
+      <input
+        matInput
+        type="number"
+        placeholder="Employee Code"
+        formControlName="code"
+        minlength="2"
+        maxlength="4"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Employee Name"
+        formControlName="name"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        placeholder="Employee email"
+        formControlName="email"
+      />
+    </mat-form-field>
+
+    <mat-label>Gender</mat-label> :
+    <mat-radio-group
+      aria-label="Select an option"
+      *ngFor="let item of gender"
+      formControlName="gender"
+    >
+      <mat-radio-button [value]="item.value" class="mat-radio-label-content">{{
+        item.name
+      }}</mat-radio-button>
+    </mat-radio-group>
+    <br /><br />
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dob" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Employee Type</mat-label>
+      <mat-select formControlName="emp_type">
+        <mat-option *ngFor="let item of employee_Type" [value]="item.value">
+          {{ item.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div mat-dialog-actions [align]="'end'">
+      <button mat-raised-button color="primary">{{ actionBtn }}</button>
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    </div>
+  </form>
+</div>

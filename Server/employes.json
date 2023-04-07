@@ -1,0 +1,13 @@
+{
+  "employes": [
+    {
+      "code": 123,
+      "name": "ASD",
+      "email": "abc@gmail.com",
+      "gender": "male",
+      "dob": "2023-04-26T18:30:00.000Z",
+      "emp_type": "team lead",
+      "id": 1
+    }
+  ]
+}
